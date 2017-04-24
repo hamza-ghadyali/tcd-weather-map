@@ -27,10 +27,10 @@ function myOnEachFeatureFunction(feature, layer) {
   popuptext += '<p>' + feature.properties.Station_ID + '</p>' ;
   popuptext += '<p>' + feature.properties.Location_Info + '</p>' ;
   popuptext += '<p>TCD tMin Mean: ' + feature.properties.tcd_tmin_mean + '</p>';
-  popuptext += '<p>TCD tMin Variance: ' + feature.properties.tcd_tmin_variance + '</p>';
+  popuptext += '<p>TCD tMin Variance: ' + feature.properties.tcd_tmin_var + '</p>';
   popuptext += '<p>TCD tMin Std Deviation: ' + feature.properties.tcd_tmin_stddev + '</p>';
   popuptext += '<p>TCD tMax Mean: ' + feature.properties.tcd_tmax_mean + '</p>';
-  popuptext += '<p>TCD tMax Variance: ' + feature.properties.tcd_tmax_variance + '</p>';
+  popuptext += '<p>TCD tMax Variance: ' + feature.properties.tcd_tmax_var + '</p>';
   popuptext += '<p>TCD tMax Std Deviation: ' + feature.properties.tcd_tmax_stddev + '</p>';
 
   popuptext += '</div>';
@@ -70,6 +70,8 @@ for(var i=0; i<names.length; i++){
     minmax[p+"_max"] = Math.max(...vals);
   }
 
+//change basemap image
+//http://leaflet-extras.github.io/leaflet-providers/preview/index.html
 var basemap = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
